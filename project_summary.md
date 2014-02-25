@@ -1,11 +1,11 @@
 # Silly Beat
-Makes silly beats out of random sounds from soundcloud...
+
 
 ## Author
 - Ehsan Ziya, http://github.com/zya
 
 ## Description
-
+Makes silly beats out of random sounds from soundcloud...
 
 ## Link to Prototype
 
