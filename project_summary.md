@@ -11,7 +11,6 @@ Makes silly beats out of random sounds from soundcloud...
 
 [Silly Beat Prototype](http://zya.github.io/sillybeat/ "Silly Beat Prototype")
 
-
 ## Links to External Libraries
 
 [SoundCloud API](http://developers.soundcloud.com/docs "SoundCloud API")
