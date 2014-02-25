@@ -1,16 +1,23 @@
 {
     "technologies": {
         "apis": [
-            "insert apis"
+            "Web Audio",
+            "SoundCloud",
+            
         ],
         "platforms": [
-            "insert platforms"
+            "Web",
+            "Chrome",
+            "Firefox",
+            "Webkit"
         ],
         "toolkits": [
-            "insert toolkits"
+            "node.js"
         ]
     },
     "themes": [
-        "insert themes"
+        "audio",
+        "generative",
+        "beats"
     ]
 }
