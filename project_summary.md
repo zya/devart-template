@@ -1,7 +1,7 @@
 # Silly Beat
 
 
-## Authors
+## Author
 - Ehsan Ziya, http://github.com/zya
 
 ## Description
@@ -19,10 +19,14 @@ Makes silly beats out of random sounds from soundcloud...
 
 [Node.js](http://nodejs.org/ "Node.js")
 
+[Cors-Anywhere](https://github.com/Rob--W/cors-anywhere/ "Cors-Anywhere")
+
 [Spin.js](http://fgnass.github.io/spin.js/ "Spin.js")
 
 [Bootstrap](http://www.getbootstrap.com "Bootstrap")
 
 [jQuery](http://www.jquery.com "jQuery")
+
+
 
 
