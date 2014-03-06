@@ -20,5 +20,9 @@
         "generative",
         "beats",
         "music"
+    ],
+    "languages": [
+            "javascript",
+            "html"
     ]
 }
