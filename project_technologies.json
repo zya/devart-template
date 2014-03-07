@@ -1,5 +1,9 @@
 {
     "technologies": {
+    	"languages": [
+            "javascript",
+            "html"
+    	],
         "apis": [
             "Web Audio",
             "SoundCloud"
@@ -20,9 +24,6 @@
         "generative",
         "beats",
         "music"
-    ],
-    "languages": [
-            "javascript",
-            "html"
     ]
+    
 }
