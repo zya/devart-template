@@ -1,24 +1,27 @@
 {
     "technologies": {
-    	"languages": [
+    	
+        "languages": [
             "javascript",
             "html"
     	],
+        
         "apis": [
             "Web Audio",
-            "SoundCloud"
+            "SoundCloud",
+            "Tumblr"
             
         ],
+        
         "platforms": [
-            "Web",
-            "Chrome",
-            "Firefox",
-            "Webkit"
+            "Google Chrome"
         ],
+        
         "toolkits": [
             "node.js"
         ]
     },
+    
     "themes": [
         "audio",
         "generative",
