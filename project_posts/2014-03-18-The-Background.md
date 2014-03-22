@@ -14,4 +14,4 @@ For me, having this many sounds means unlimited possibilities for creating newer
 
 ![Tumblr-Mashr Example](project_images/tumblr-mashr.png?raw=true "Tumblr-Mashr Example")
 
-In this next project, I want to take this concept and apply it to sound and music. Luckily enough, using SoundCloud API we can access these sounds and we can process them in the browser using Web Audio API. I am planing to discover the possibilities of using this huge library to create new content in real-time. In the upcoming posts, I will explain the thought process and some of the technical aspects more in detail.
+In this next project, I want to take this concept and apply it to sound and music. Luckily enough, using [SoundCloud SDK](http://developers.soundcloud.com/docs/api/sdks) we can access these sounds and we can process them in the browser using [Web Audio API](http://www.w3.org/TR/webaudio/). I am planing to discover the possibilities of using this huge library to create new content in real-time. In the upcoming posts, I will explain the thought process and some of the technical aspects more in detail.
