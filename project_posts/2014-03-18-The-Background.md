@@ -4,7 +4,7 @@ Well, the days of [debating](http://en.wikipedia.org/wiki/Copyright_Criminals) w
 
 Although the idea of sampling is deeply integrated with music making, the ways of which producers approach sampling have evolved alongside technology. In the 60's, [Delia Derbyshire](http://en.wikipedia.org/wiki/Delia_Derbyshire) and her colleagues at [BBC Radiophonic Workshop](http://en.wikipedia.org/wiki/BBC_Radiophonic_Workshop) made extensive use of magnetic tape. [Grand Master Flash](http://en.wikipedia.org/wiki/Grandmaster_Flash) used vinyl records as the sample source for scratching. Later generations used digital formats such as CDs and MP3s but today, [Youtube](http://www.youtube.com), [SoundCloud](http://www.soundcloud.com) and even streaming services such as [Spotify](http://www.spotify.com) are known to be the first go-to library for finding sample-ready material for most of producers.
 
-![Delia Derbyshire working with magnetic tape](project_images/delia.png "Delia Derbyshire working with magnetic tape")
+![Delia Derbyshire working with magnetic tape](project_images/delia.png?raw=true "Delia Derbyshire working with magnetic tape")
 
 The people mentioned above are basically doing the same thing but the difference is in the limitation of their resources and the tools they use to do the same task. The ones who used magnetic tape were limited by the amount of recorded tape they had in the studio, early turntablists were limited by the amount of rare and unique vinyls they could get their hands on and the early digital generation were limited by their hard drive capacity.
 
