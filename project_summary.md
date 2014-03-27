@@ -5,7 +5,7 @@
 - Ehsan Ziya, http://github.com/zya
 
 ## Description
-Makes silly beats out of random sounds from soundcloud...
+It is like having a jam session with SoundCloud.
 
 ## Link to Prototype
 
