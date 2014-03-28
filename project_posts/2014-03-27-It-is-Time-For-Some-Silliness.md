@@ -6,7 +6,7 @@ Some final tweaks and it is done. After having the main structure working, I spe
 kickParams = generateParameters("kick drum","",300, 40000);
 snareParams = generateParameters("snare","",100,30000);
 hatParams = generateParameters("hihat","",100,30000);
-sampleParams = generateParameters("","",5000,500000);
+sampleParams = generateParameters("","",5000,500000); //uses nothing as string for more various results
 percParams = generateParameters("percussion sample","",0,30000);
 
 //volumes - Balance mix
