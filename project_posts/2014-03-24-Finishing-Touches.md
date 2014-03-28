@@ -2,10 +2,10 @@
 Web Audio API gives a reasonable set of tools to be used for effects processing. Nodes such as Delay, Convolver and Dynamics Compressor are more than enough for this scenario. I used the delay effect mostly on the main sample with the delay-time set to a eighth-note to give a little bit of depth to the sound. I used the convolver node as a reverb effect to glue the whole beat together. And finally, I used the compressor to control the levels and limit the gain.
 
 ## Recorder.js
-Now that we genereted our beats, It would be trivial if we did not have way to record and store them. It is quiet unlikely that a same beat will be generated a second time, so it would be nice to have a recorder and a way to save the recorded file. [Recorder.js]() does exactly the same. The library uses Web Audio API's `ScriptProccesorNode` in conjunction with [Web Workers]() and lets you export a wav file of the recording.
+Now that we genereted our beats, It would be trivial if we did not have way to record and store them. It is quiet unlikely that a same beat will be generated a second time, so it would be nice to have a recorder and a way to save the recorded file. [Recorder.js](https://github.com/mattdiamond/Recorderjs) does exactly the same. The library uses Web Audio API's `ScriptProccesorNode` in conjunction with [Web Workers](http://www.w3.org/TR/workers/) and lets you export a wav file of the recording.
 
 ## The Interface
-Although the inteface design is not the main goal in this project, it is important to have a basic and simple GUI in order for the app to be usable. I decided on using four big buttons for the main functions which are New Sounds, New Pattern, Play/Pause and Record. On the bottom section, we have loading indicators which use [Spin.js]() and finally there will be links to original sounds used on the beat as well as mute buttons for each sound.
+Although the inteface design is not the main goal in this project, it is important to have a basic and simple GUI in order for the app to be usable. I decided on using four big buttons for the main functions which are New Sounds, New Pattern, Play/Pause and Record. On the bottom section, we have loading indicators which use [Spin.js](http://fgnass.github.io/spin.js/) and finally there will be links to original sounds used on the beat as well as mute buttons for each sound.
 
 ## Let there be Tumblr!
 
