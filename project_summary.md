@@ -10,12 +10,13 @@ Twelve hours of audio content is being added to SoundCloud every minute! There i
 
 ## Images and Videos
 
-[Some Beats Generated Using Silly Beat - SoundCloud Link](https://soundcloud.com/iamzya/sets/silly-beat/s-fvZRF "Beat Samples")
+[Listen to Sound Demos](https://soundcloud.com/iamzya/sets/silly-beat/s-fvZRF "Beat Samples")
 
-The Interface
+https://www.youtube.com/watch?v=zeseaRbhyew
+
+https://www.youtube.com/watch?v=ODjQAlNG500
 
 ![Interface](project_images/interface1.png?raw=true "Interface")
-
 
 
 
@@ -26,6 +27,8 @@ The Interface
 ## Links to External Libraries
 
 [SoundCloud API](http://developers.soundcloud.com/docs "SoundCloud API")
+
+[Tumblr API](http://www.tumblr.com/docs/en/api/v2)
 
 [Node.js](http://nodejs.org/ "Node.js")
 
