@@ -8,6 +8,10 @@
 It's like having a jam session with SoundCloud. The idea is to take a series of random sounds from SoundCloud and generate a beat using those as samples.
 Twelve hours of audio content is being added to SoundCloud every minute! There is everything in there. From field recordings to spoke word, from home recordings to covers and even accident recordings that people did to test SoundCloud's mobile app. For me this is a unique opportunity and having all these sounds means a massive amount of sonic possibilities. By combining these sounds, Silly Beat can make new beats by choosing random sounds and combining them using random patterns.
 
+## Demos
+
+<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/28366032%3Fsecret_token%3Ds-fvZRF&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>
+
 ## Link to Prototype
 
 [Silly Beat Prototype](http://zya.github.io/sillybeat/ "Silly Beat Prototype")
