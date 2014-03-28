@@ -1,4 +1,6 @@
-Some final tweaks and it is done. After having the main structure working, I spent some time changing the little parameters for a better performance as well as nicer results. I tweaked the time range for each sample so that the drum sounds are ready before the main sample is downloaded. I changed the probability factor of sounds like hihat to prevent chaos and finally I tweaked the balance mix a little bit further for an optimal sounding beat. I also refactored the code a little bit for a better and readable code.
+Some final tweaks and it is done. After having the main structure working, I spent some time changing the little parameters for a better performance and nicer results. 
+
+I tweaked the time range for each sample so that the drum sounds are downloaded quicker and are ready before the main sample. I changed the probability factor of sounds like hihat to prevent chaos and finally I tweaked the mix a little bit further for an optimal sounding beat. I also refactored the code a little bit for a better and readable code.
 
 ```
 
