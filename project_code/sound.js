@@ -8,7 +8,7 @@ function Sound(context,cors,searchparameters,output,callbackfunction){
 	this.destination = output;
 	this.url = null;
 	this.permalink = null;
-	this.request;
+	this.request = null;
 	this.playbackRate = Math.random() + 0.3;
 	//get sounds from soundcloud
 	SC.get('/tracks',searchparameters,function(tracks){
@@ -51,19 +51,36 @@ function Sound(context,cors,searchparameters,output,callbackfunction){
 }
 
 //play method
-Sound.prototype.start = function(next,offset,duration){
+Sound.prototype.start = function(next,offset){
 	
-	//create the buffer
+	//create the buffer and env
 	this.source = this.context.createBufferSource();
+	this.env = this.context.createGain();
 	this.source.buffer = this.buffer;
 	this.source.playbackRate.value = this.playbackRate;
-	this.source.connect(this.destination);
+	this.source.connect(this.env);
+	this.env.connect(this.destination);
+	
+	//when no offset is passed - prevents firefox from error 
+	if(!offset){
+		offset = 0;
+	}
+	//start and envelope
+	this.env.gain.setValueAtTime(0,next);
+	this.env.gain.linearRampToValueAtTime(1,next + 0.001); //to prevent cliping at start
 	this.source.start(next,offset);
 	
 	
 };
 
 Sound.prototype.stop = function(time){
-	this.source.stop(time);
+	this.env.gain.linearRampToValueAtTime(0,time);
+	this.source.stop(time + 0.001);
+	var that = this;
+	//for garbage collection of gain nodes
+	setTimeout(function(){
+		that.env.disconnect();
+	},time / 1000);
+
 
 };

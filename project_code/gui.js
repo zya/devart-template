@@ -1,4 +1,4 @@
-function guiinit(global, spinners, startcallback, stopcallback, soundrefreshcallback, patternsrefreshcallback, nodes){
+function guiinit(global, spinners, startcallback, stopcallback, soundrefreshcallback, patternsrefreshcallback, nodes,recordstart, recordstop){
 	//spinner params
 
 	var params = {
@@ -10,8 +10,8 @@ function guiinit(global, spinners, startcallback, stopcallback, soundrefreshcall
   		corners: 1, // Corner roundness (0..1)
   		rotate: 30, // The rotation offset
   		direction: 1, // 1: clockwise, -1: counterclockwise
-  		color: '#000', // #rgb or #rrggbb or array of colors
-  		speed: 1.4, // Rounds per second
+  		color: '#fff', // #rgb or #rrggbb or array of colors
+  		speed: 1.2, // Rounds per second
   		trail: 54, // Afterglow percentage
   		shadow: false, // Whether to render a shadow
   		hwaccel: false, // Whether to use hardware acceleration
@@ -40,16 +40,26 @@ function guiinit(global, spinners, startcallback, stopcallback, soundrefreshcall
 
 	$('#newSounds').click(function(){
 		soundrefreshcallback();
-
+		
 		spinners.kickSpinner = new Spinner(params).spin(spinnerTargetKick);
 		spinners.snareSpinner = new Spinner(params).spin(spinnerTargetSnare);
 		spinners.hatSpinner = new Spinner(params).spin(spinnerTargetHihat);
 		spinners.percSpinner = new Spinner(params).spin(spinnerTargetPerc);
 		spinners.sampSpinner = new Spinner(params).spin(spinnerTargetSamp);
+
+		if(!ios && !android){
+
+			getPics();
+		}
+
 	});
 
 	$('#newPatterns').click(function(){
 		patternsrefreshcallback();
+		if(!ios && !android){
+
+			getPics();
+		}
 	});
 
 	$('#play').click(function(){
@@ -69,6 +79,7 @@ function guiinit(global, spinners, startcallback, stopcallback, soundrefreshcall
 		e.preventDefault();
 		if($(this).attr('class') === 'glyphicon glyphicon-volume-up vol'){
 			$(this).attr('class','glyphicon glyphicon-volume-off vol');
+			
 			var id = $(this).attr('id');
 			switch(id){
 				case 'kickvol':
@@ -95,8 +106,9 @@ function guiinit(global, spinners, startcallback, stopcallback, soundrefreshcall
 			}
 		}else{
 			$(this).attr('class','glyphicon glyphicon-volume-up vol');
-			var id = $(this).attr('id');
-			switch(id){
+			
+			var id2 = $(this).attr('id');
+			switch(id2){
 				case 'kickvol':
 					nodes.kick.gain.value = 1;
 
@@ -123,6 +135,79 @@ function guiinit(global, spinners, startcallback, stopcallback, soundrefreshcall
 		
 	});
 
+	
+
+	function setBackGround(e){
+		
+		var random = Math.round(Math.floor(Math.random() * e.response.length));
+		console.log(e.response.length);
+		console.log(random);
+		if(e.response[random].type === 'photo'){
+
+			$('#back').css({
+
+				background: "url('" + e.response[random].photos[0].original_size.url + "')",
+                'background-size': "200% 200%",
+                opacity: '0.65'
+
+			});
+		
+		}else{
+
+			setBackGround();
+		}
+
+	}
+	
+
+	function getPics(){
+
+		$.ajax({
+	        url: 'http://api.tumblr.com/v2/tagged?tag=glitch+gif&api_key=cIBh1bpFkHI2pyWmGDV3YPOlErsRgNCtsJ715Pl09uMKEY2kOK&limit=50',
+	        success: setBackGround,
+	        dataType: 'jsonp'
+   		 });
+
+	}
+
+	//getPics();
+
+	$('#questionmark').click(function(){
+
+		var state = String($('#desc').css('visibility'));
+		
+		if(state === 'hidden'){
+
+			$('#desc').css('visibility','visible');
+
+		}else{
+
+			$('#desc').css('visibility','hidden');
+		}
+
+	});
+
+	if(ios || android){
+
+		masterGain.connect(context.destination);
+		$('#recorder').css('opacity','0.3');
+		$('#rectext').html('Record - Not Available on Mobile');
+
+	}else{
+		$('#record').click(function(){
+			
+			if($(this).attr('class') === 'glyphicon glyphicon-record butt'){
+				recordstart();
+				$(this).attr('class','glyphicon glyphicon-stop butt');
+			}else if($(this).attr('class') === 'glyphicon glyphicon-stop butt'){
+				recordstop();
+				$(this).attr('class','glyphicon glyphicon-record butt');
+			}
+			
+		});
+		getPics();
+		
+	}
 
 }
 

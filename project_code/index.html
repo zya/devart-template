@@ -3,15 +3,22 @@
 
 	
 	<head>
-		<title>SoundCloud Generative Test</title>
+		<title>Silly Beat - Generative Beat Machine By ZYA</title>
 		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'/>
+		<meta property="og:title" content="Silly Beat - Generative Beat Machine By ZYA" />
+        <meta property="og:site_name" content="ZYA.CC"/>
+        <meta property="og:url" content="http://www.zya.cc/sillybeat" />
+		<meta property="og:description" content="It's like having a jam session with SoundCloud. The idea is to take a series of random sounds from SoundCloud and generate a beat using those as samples.
+Twelve hours of audio content is being added to SoundCloud every minute! There is everything in there. From field recordings to spoke word, from home recordings to covers and even accident recordings that people did to test SoundCloud's mobile app. For me this is a unique opportunity and having all these sounds means a massive amount of sonic possibilities. By combining these sounds, Silly Beat can make new beats by choosing random sounds and combining them using random patterns.
+Background pictures are also randomly selected from Tumblr." />
+		<meta property="og:image" content="https://24.media.tumblr.com/9a94c49f9612c94f46f866fa3ab1aa04/tumblr_n2fhfsTuEJ1sjhkkoo1_r1_400.jpg" />
 		
-		
-		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="libs/js/jquery-1.10.2.min.js"></script>
 		<script src="libs/js/bootstrap.min.js"></script>
 		<script src="http://connect.soundcloud.com/sdk.js"></script>
 		<script src="libs/js/spin.min.js"></script>
 		<script src="libs/js/snap.svg.js"></script>
+		<script src="libs/js/recorder.js"></script>
 		
 		<script src='gui.js'></script>
 		<script src='loop.js'></script>
@@ -32,78 +39,109 @@
 	
 
 	<body>
+		<div id='back'></div><br>
+
 		<div class='container'>
 			<div class='row' id='head'>
-				<br>
-				<h2 class='col-md-12'id='title'><b>Silly Beat</b><br><small> makes silly beats out of random soundcloud crap</small></h2>
-			</div>
-			<div class='row' id='visual'>
+				
+				<h2 class='col-md-12'id='title'><b>Silly Beat</b><small> It's like having a jam session with soundcloud</small></h2>
 
 			</div>
 			
 			<div class='row' id='buttons'>
 				<br>
-				<div class='col-md-3 col-sm-3'></div>
-				<div class='col-md-2 col-sm-2'>
+				
+				<div class='col-md-3 col-sm-3 col-xs-3'>
 					<span class='glyphicon glyphicon-refresh butt' id='newSounds'></span><br><br>
-					<div><small>Get New Sounds</small></div>
+					<div class='text'><small>Get New Sounds</small></div>
 				</div>
 
-				<div class='col-md-2 col-sm-2'>
+				<div class='col-md-3 col-sm-3 col-xs-3'>
 					<span class='glyphicon glyphicon-refresh butt' id='newPatterns'></span><br><br>
-					<div><small>Make New Patterns</small></div>
+					<div class='text'><small>Make New Patterns</small></div>
 				</div>
-				<div class='col-md-2 col-sm-2'>
+				<div class='col-md-3 col-sm-3 col-xs-3'>
 					<span class='glyphicon glyphicon-play butt' id='play'></span><br><br>
-					<div><small>Play / Pause</small></div>
+					<div class='text'><small>Play / Pause</small></div>
 				</div>
-				<div class='col-md-3 col-sm-3'></div>
+
+				<div class='col-md-3 col-sm-3 col-xs-3' id='recorder'>
+					<span class='glyphicon glyphicon-record butt' id='record'></span><br><br>
+					<div class='text' id='rectext'><small>Record</small></div>
+				</div>
+				
 			</div>
 			
 			<div class='row' id='indic'>
 				<br><br>
-				<div class='col-md-1 col-sm-1'></div>
-				<div class='col-md-2 col-sm-2'>
+				<div class='col-md-1 col-sm-1 col-xs-1'></div>
+				<div class='col-md-2 col-sm-2 col-xs-2'>
 					<div id='spinnerTargetKick'></div><br>
-					<div><small>Kick</small></div> </br>
+					<div class='text'><small>Kick</small></div> </br>
 					<a target="_blank" href="" id='kicklink'><span class='glyphicon glyphicon-link link'></span></a><br>
-					<span class='glyphicon glyphicon-volume-up vol' id='kickvol'></span>
+					<span class='glyphicon glyphicon-volume-up vol' id='kickvol'></span><br><br>
 				</div>
 
-				<div class='col-md-2 col-sm-2'>
+				<div class='col-md-2 col-sm-2 col-xs-2'>
 					<div id='spinnerTargetSnare'></div><br>
-					<div><small>Snare</small></div> </br>
+					<div class='text'><small>Snare</small></div> </br>
 					<a target="_blank" href="" id='snarelink'><span class='glyphicon glyphicon-link link'></span></a><br>
-					<span class='glyphicon glyphicon-volume-up vol' id='snarevol'></span>
+					<span class='glyphicon glyphicon-volume-up vol' id='snarevol'></span><br><br>
 				</div>
 
-				<div class='col-md-2 col-sm-2'>
+				<div class='col-md-2 col-sm-2 col-xs-2'>
 					<div id='spinnerTargetHihat'></div><br>
-					<div><small>Hihat</small></div> </br>
+					<div class='text'><small>Hihat</small></div> </br>
 					<a target="_blank" href="" id='hatlink'><span class='glyphicon glyphicon-link link'></span></a><br>
-					<span class='glyphicon glyphicon-volume-up vol' id='hatvol'></span>
+					<span class='glyphicon glyphicon-volume-up vol' id='hatvol'></span><br><br>
 				</div>
 
-				<div class='col-md-2 col-sm-2'>
+				<div class='col-md-2 col-sm-2 col-xs-2'>
 					<div id='spinnerTargetPerc'></div><br>
-					<div><small>Percussion</small></div> </br>
+					<div class='text'><small>Percussion</small></div> </br>
 					<a target="_blank" href="" id='perclink'><span class='glyphicon glyphicon-link link'></span></a><br>
-					<span class='glyphicon glyphicon-volume-up vol' id='percvol'></span>
+					<span class='glyphicon glyphicon-volume-up vol' id='percvol'></span><br><br>
 				</div>
 
-				<div class='col-md-2 col-sm-2'>
+				<div class='col-md-2 col-sm-2 col-xs-2'>
 					<div id='spinnerTargetSamp'></div></br>
-					<div><small>Sample</small></div> </br>
+					<div class='text'><small>Sample</small></div> </br>
 					<a target="_blank" href="" id='samplink'><span class='glyphicon glyphicon-link link'></span></a><br>
-					<span class='glyphicon glyphicon-volume-up vol' id='sampvol'></span><br>
+					<span class='glyphicon glyphicon-volume-up vol' id='sampvol'></span><br><br>
 					
 				</div>
 
-				<div class='col-md-1 col-sm-1'></div>
+				<div class='col-md-1 col-sm-1 col-xs-1'></div>
 
 
 			</div>
+			
 		</div>
-		
+		<br>
+		<div id='help' class='row'>
+			<div class='col-md-3 col-sm-3 col-xs-3'></div>
+			<div class='col-md-6 col-sm-6 col-xs-6'>
+				<span class='glyphicon glyphicon-question-sign' id='questionmark'></span><br>
+				<small id='desc'>
+				It's like having a jam session with SoundCloud. The idea is to take a series of random sounds from SoundCloud and generate a beat using those as samples.
+				<br>By combining these sounds, Silly Beat can make new beats by choosing random sounds and combining them using random patterns.<br>
+				Background pictures are also randomly selected from Tumblr.<br>
+				Read more on <a href='https://devart.withgoogle.com/#/project/17176216' target="_blank">Dev-Art With Google</a>.<br>
+				Fork me on <a href='http://www.github.com/zya/sillybeat' target="_blank">GitHub</a><br>
+				By<a href='http://www.zya.cc/' target="_blank"> ZYA </a>
+				</small>
+			</div>
+			<div class='col-md-3 col-sm-3 col-xs-3'></div>
+		</div>
+	 <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-45115441-1', 'zya.cc');
+	  ga('send', 'pageview');
+
+	</script>
 	</body>
 </html>
